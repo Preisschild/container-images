@@ -1,0 +1,6 @@
+FROM docker.io/octoprint/octoprint:latest
+RUN apt-get update \
+ && apt-get install socat -y \
+ && rm -rf /var/lib/apt/lists/*
+
+COPY services.d/socat /etc/services.d/socat

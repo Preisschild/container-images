@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv sh
+
+if [ -n "$SOCAT_SER2NET_HOST" -a -n "$SOCAT_SER2NET_PORT" ]; then
+  echo "socat enabled (/dev/ttyUSB30)"
+  exec socat \
+    pty,link=/dev/ttyUSB30,raw,echo=0 "tcp:$SOCAT_SER2NET_HOST:$SOCAT_SER2NET_PORT"
+fi

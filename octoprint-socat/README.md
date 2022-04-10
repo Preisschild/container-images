@@ -1,0 +1,1 @@
+official octoprint image with socat installed for remote ser2net 3d printers
